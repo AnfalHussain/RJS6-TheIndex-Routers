@@ -11,7 +11,7 @@ function BookTable(props) {
       <thead>
         <tr>
           <th>Name</th>
-          <th>Authors</th>
+          <th>Authors </th>
           <th>Color</th>
         </tr>
       </thead>
