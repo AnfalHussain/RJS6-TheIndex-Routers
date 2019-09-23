@@ -34,8 +34,13 @@ class App extends Component {
 
   async componentDidMount() {
     try {
-      const authors = await this.fetchAllAuthors();
-      const books = await this.fetchAllBooks()
+      const authorsPromise = this.fetchAllAuthors();
+      const booksPromise = this.fetchAllBooks()
+
+      const authors = await authorsPromise
+      const books = await booksPromise
+
+
       this.setState({
         authors: authors,
         books: books,
@@ -64,7 +69,7 @@ class App extends Component {
           />
 
           <Route
-            path="/books/"
+            path="/books/:BookColor?"
             render={props => (
               <BookList {...props} books={this.state.books} />
             )}

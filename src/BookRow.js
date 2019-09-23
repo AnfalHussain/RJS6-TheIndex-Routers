@@ -12,7 +12,7 @@ function BookRow(props) {
       <td>{book.title}</td>
       <td>{authors}</td>
       <td>
-        <button className="btn" style={{ backgroundColor: book.color }} />
+        <Link to={`/books/${book.color}`} className="btn" style={{ backgroundColor: book.color }}></Link>
       </td>
     </tr>
   );
