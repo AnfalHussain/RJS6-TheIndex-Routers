@@ -31,28 +31,19 @@ class App extends Component {
     return res.data;
   };
 
-  async getBooks() {
+
+  async componentDidMount() {
     try {
-      const books = await this.fetchAllBooks();
+      const authors = await this.fetchAllAuthors();
+      const books = await this.fetchAllBooks()
       this.setState({
+        authors: authors,
         books: books,
         loading: false
       });
     } catch (err) {
       console.error(err);
     }
-  };
-  async componentDidMount() {
-    try {
-      const authors = await this.fetchAllAuthors();
-      this.setState({
-        authors: authors,
-        loading: false
-      });
-    } catch (err) {
-      console.error(err);
-    }
-    this.getBooks()
   }
 
 
